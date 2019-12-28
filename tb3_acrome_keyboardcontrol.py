@@ -66,9 +66,9 @@ class ControlTB3():
 
 			elif (self.curr_key == 'h'):
 				self.target_linear_vel   = 0.0
-                self.control_linear_vel  = 0.0
-                self.target_angular_vel  = 0.0
-                self.control_angular_vel = 0.0
+				self.control_linear_vel  = 0.0
+				self.target_angular_vel  = 0.0
+				self.control_angular_vel = 0.0
 				print(velocities(self.target_linear_vel, self.target_angular_vel))
 
 			else:
@@ -91,12 +91,12 @@ class ControlTB3():
 
 	def getKey():
 		tty.setraw(sys.stdin.fileno())
-    	rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+    		rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
 
-    	if rlist:
-        	key = sys.stdin.read(1)
-    	else:
-        	key = ''
+		if rlist:
+			key = sys.stdin.read(1)
+		else:
+			key = ''
 
     	termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
     	return key
